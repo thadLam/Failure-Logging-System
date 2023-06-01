@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Failure Logging System.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\assets\\James-Main-logo-black.png",
+      "PackagePath": "staticwebassets\\assets\\James-Main-logo-black.png"
+    },
+    {
       "Id": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

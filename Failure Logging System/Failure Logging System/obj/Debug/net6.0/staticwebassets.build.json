@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WerkegN+PzyCHv8+pxB1VLCYqxquWZz0BaIB/VOS0xU=",
+  "Hash": "sFfuIhZmxqkn4BgJTBAU6O1wn/vmcwAFqgkL9rmLWho=",
   "Source": "Failure Logging System",
   "BasePath": "_content/Failure Logging System",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Failure Logging System.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\assets\\James-Main-logo-black.png",
+      "SourceId": "Failure Logging System",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\",
+      "BasePath": "_content/Failure Logging System",
+      "RelativePath": "assets/James-Main-logo-black.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\James-Main-logo-black.png"
     },
     {
       "Identity": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\css\\site.css",

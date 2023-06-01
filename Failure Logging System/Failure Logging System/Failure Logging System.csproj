@@ -7,4 +7,8 @@
     <RootNamespace>Failure_Logging_System</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\" />
+  </ItemGroup>
+
 </Project>
