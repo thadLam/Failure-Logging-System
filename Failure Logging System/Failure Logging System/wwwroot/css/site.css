@@ -52,11 +52,18 @@ body {
     left: 0px;
     padding: 0px;
     margin: 0px;
-    display: flex;
 }
 
 .center {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     align-items: center;
 }
