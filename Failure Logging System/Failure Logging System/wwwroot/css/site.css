@@ -20,6 +20,8 @@ body {
 
 .navbar {
     background-color: #27272c;
+    border: 1px;
+    border-style: hidden;
 }
 
 .footer {
@@ -29,6 +31,8 @@ body {
     white-space: nowrap;
     line-height: 60px;
     background-color: #27272c;
+    border: 1px;
+    border-style: hidden;
 }
 
 .vertical-align-text {
@@ -66,4 +70,13 @@ body {
     margin-right: auto;
     width: 50%;
     align-items: center;
+}
+
+.landing-page-div {
+    height: 400px;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }

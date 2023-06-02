@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sFfuIhZmxqkn4BgJTBAU6O1wn/vmcwAFqgkL9rmLWho=",
+  "Hash": "OOhdp9hNeXGUFvBfhfnk4f2K3+z5Ac3p+IR6mfYm948=",
   "Source": "Failure Logging System",
   "BasePath": "_content/Failure Logging System",
   "Mode": "Default",
@@ -66,6 +66,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\James-Main-logo-black.png"
+    },
+    {
+      "Identity": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\assets\\James-Main-logo-red.png",
+      "SourceId": "Failure Logging System",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\",
+      "BasePath": "_content/Failure Logging System",
+      "RelativePath": "assets/James-Main-logo-red.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\James-Main-logo-red.png"
+    },
+    {
+      "Identity": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\assets\\James-Main-logo-red-small.png",
+      "SourceId": "Failure Logging System",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\",
+      "BasePath": "_content/Failure Logging System",
+      "RelativePath": "assets/James-Main-logo-red-small.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\James-Main-logo-red-small.png"
     },
     {
       "Identity": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\css\\site.css",

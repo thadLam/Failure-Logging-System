@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\assets\\James-Main-logo-black.png"
     },
     {
+      "Id": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\assets\\James-Main-logo-red-small.png",
+      "PackagePath": "staticwebassets\\assets\\James-Main-logo-red-small.png"
+    },
+    {
+      "Id": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\assets\\James-Main-logo-red.png",
+      "PackagePath": "staticwebassets\\assets\\James-Main-logo-red.png"
+    },
+    {
       "Id": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
