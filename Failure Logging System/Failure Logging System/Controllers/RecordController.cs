@@ -5,11 +5,6 @@ namespace Failure_Logging_System.Controllers
 {
     public class RecordController : Controller
     {
-        // GET: RecordController
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         // GET: RecordController/ViewRecord
         public IActionResult ViewRecord()
