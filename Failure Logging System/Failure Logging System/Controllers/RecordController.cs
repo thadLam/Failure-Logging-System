@@ -110,6 +110,37 @@ namespace Failure_Logging_System.Controllers
                 new SelectListItem { Value = "Unknown", Text = "Unknown"}
             };
 
+            //models list
+            List<SelectListItem> models = new()
+            {
+                new SelectListItem { Value = "Unknown", Text = "Unknown"}
+            };
+
+            //failure Fault list
+            List<SelectListItem> failureFault = new()
+            {
+                new SelectListItem { Value = "Assembly", Text = "Assembly"},
+                new SelectListItem { Value = "External Manufacturer", Text = "External Manufacturer"},
+                new SelectListItem { Value = "Internal Fabrication", Text = "Internal Fabrication"},
+                new SelectListItem { Value = "QC", Text = "QC"},
+                new SelectListItem { Value = "Unknown", Text = "Unknown"}
+            };
+
+            //quanity list
+            List<SelectListItem> quantity = new()
+            {
+                new SelectListItem { Value = "1", Text = "1"},
+                new SelectListItem { Value = "2", Text = "2"},
+                new SelectListItem { Value = "3", Text = "3"},
+                new SelectListItem { Value = "4", Text = "4"},
+                new SelectListItem { Value = "5", Text = "5"},
+                new SelectListItem { Value = "5", Text = "6"},
+                new SelectListItem { Value = "5", Text = "7"},
+                new SelectListItem { Value = "5", Text = "8"},
+                new SelectListItem { Value = "5", Text = "9"},
+                new SelectListItem { Value = "5", Text = "10"}
+            };
+
             //assigning SelectListItem to View Bag
             ViewBag.airLeakType = airLeakType;
             ViewBag.airLeakLocation = airLeakLocation;
@@ -120,6 +151,9 @@ namespace Failure_Logging_System.Controllers
             ViewBag.apTestType = apTestType;
             ViewBag.apTestLocation = apTestLocation;
             ViewBag.groundingLocation = groundingLocation;
+            ViewBag.models = models;
+            ViewBag.failureFault = failureFault;
+            ViewBag.quantity = quantity;
             return View();
         }
 
