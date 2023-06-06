@@ -54,33 +54,96 @@
                 <button class="tablinks" onclick="openCategory(event, 'Air Leak')"><strong>Air Leak</strong></button>
                 <button class="tablinks" onclick="openCategory(event, 'Cosmetic')"><strong>Cosmetic</strong></button>
                 <button class="tablinks" onclick="openCategory(event, 'Listening')"><strong>Listening</strong></button>
+                <button class="tablinks" onclick="openCategory(event, 'Polarity')"><strong>Polarity</strong></button>
                 <button class="tablinks" onclick="openCategory(event, 'AP Test')"><strong>AP Test</strong></button>
             </div>
 
             <!-- Tab content -->
             <div id="Air Leak" class="tabcontent">
-                <h3><strong>Air Leak</strong></h3>
+                <h3>Air Leak</h3>
+                <!-- Air Leak Options -->
                 <div class="row">
                     <div class="col-4">
                         <label class="control-label block-display"><strong>Type</strong></label>
+                        <!-- Type Options -->
                         <select name="type class="form-control center" asp-items="@ViewBag.airLeakType"><option value="">Select Option...</option></select>
+                    </div>
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Location</strong></label>
+                        <!-- Location Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.airLeakLocation"><option value="">Select Option...</option></select>
                     </div>
                 </div>
             </div>
 
             <div id="Cosmetic" class="tabcontent">
                 <h3>Cosmetic</h3>
-                <p>Make up</p>
+                <!-- Cosmetic Options -->
+                <div class="row">
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Location</strong></label>
+                        <!-- Location Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.cosmeticLocation"><option value="">Select Option...</option></select>
+                    </div>
+                </div>
             </div>
 
             <div id="Listening" class="tabcontent">
                 <h3>Listening</h3>
-                <p>buzzing</p>
+                <!-- Listening Options -->
+                <div class="row">
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Type</strong></label>
+                        <!-- Type Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.listeningType"><option value="">Select Option...</option></select>
+                    </div>
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Location</strong></label>
+                        <!-- Location Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.listeningLocation"><option value="">Select Option...</option></select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Polarity" class="tabcontent">
+                <h3>Polarity</h3>
+                <!-- Listening Options -->
+                <div class="row">
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Location</strong></label>
+                        <!-- Location Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.polarityLocation"><option value="">Select Option...</option></select>
+                    </div>
+                </div>
             </div>
 
             <div id="AP Test" class="tabcontent">
                 <h3>AP Test</h3>
-                <p>I didnt study for this</p>
+                <!-- AP Test Options -->
+                <div class="row">
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Type</strong></label>
+                        <!-- Type Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.apTestType"><option value="">Select Option...</option></select>
+                    </div>
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Location</strong></label>
+                        <!-- Location Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.apTestLocation"><option value="">Select Option...</option></select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Grounding" class="tabcontent">
+                <h3>Grounding</h3>
+                <!-- Grounding Options -->
+                <div class="row">
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Location</strong></label>
+                        <!-- Location Options -->
+                        <select name="type class="form-control center" asp-items="@ViewBag.groundingLocation"><option value="">Select Option...</option></select>
+                    </div>
+                </div>
             </div>
 
             <!-- Notes section -->
