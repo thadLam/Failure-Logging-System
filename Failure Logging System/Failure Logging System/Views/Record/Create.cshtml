@@ -42,7 +42,6 @@
                 <option value="DRV.2X5.001">DRV.2X5.001</option>
                 <option value="NE65W-04">NE65W-04</option>
             </select>
-            @*<p><input type="submit" value="Submit"></p>*@
         </div>
     </div>
 
@@ -174,6 +173,11 @@
             <!-- Quantity Options -->
             <label class="control-label block-display"><strong>Quantity</strong></label>
             <select name="type class="form-control center flex-display additional-options" asp-items="@ViewBag.quantity"><option value="">Select Option</option></select>
+            <!-- Discarded -->
+            <!-- Submit Button  -->
+            <div class="note-box">
+                <input type="submit" class="submit-btn" value="Submit Report" />
+            </div>
         </div>
     </div>
 </div>

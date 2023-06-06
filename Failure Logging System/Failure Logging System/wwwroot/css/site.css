@@ -173,7 +173,8 @@ select {
 
 .col-4 {
     position: relative;
-
+    padding-left: .5em;
+    height: 670px;
 }
 
 .col-8 {
@@ -202,6 +203,16 @@ label {
     border-radius: 8px;
     background-color: #f1f1f1;
     box-shadow: 2px 2px #333;
+}
+
+.submit-btn {
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    width: 175px;
+    height: 40px;
+    font-family: Montserrat;
 }
 
 /* Style the Notes section */
