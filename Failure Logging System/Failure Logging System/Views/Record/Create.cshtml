@@ -174,6 +174,16 @@
             <label class="control-label block-display"><strong>Quantity</strong></label>
             <select name="type class="form-control center flex-display additional-options" asp-items="@ViewBag.quantity"><option value="">Select Option</option></select>
             <!-- Discarded -->
+            <table>
+                <tr>
+                    <td>
+                        <input id="discarded" type="checkbox" name="discarded" value="0" checked="1" />
+                    </td>
+                    <td>
+                        <label for="discarded"><strong>Discarded</strong></label>
+                    </td>
+                </tr>
+            </table>
             <!-- Submit Button  -->
             <div class="note-box">
                 <input type="submit" class="submit-btn" value="Submit Report" />
