@@ -1,21 +1,21 @@
 html {
-  font-size: 14px;
-  font-family: Montserrat;
+    font-size: 14px;
+    font-family: Montserrat;
 }
 
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
-  }
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .navbar {
@@ -159,4 +159,19 @@ body {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+.form-control {
+
+}
+
+.main-section {
+    height: 680px;
+    position: relative;
+}
+
+.note-box {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }

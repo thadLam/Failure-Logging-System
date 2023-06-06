@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace Failure_Logging_System.Controllers
 {
@@ -21,6 +23,16 @@ namespace Failure_Logging_System.Controllers
         // GET: RecordController/Create
         public ActionResult Create()
         {
+            //airLeak Type list
+            List<SelectListItem> airLeakType = new()
+            {
+                new SelectListItem { Value = "1", Text = "External"},
+                new SelectListItem { Value = "2", Text = "Internal"},
+                new SelectListItem { Value = "3", Text = "Unknown"}
+            };
+
+            //assigning SelectListItem to View Bag
+            ViewBag.airLeakType = airLeakType;
             return View();
         }
 
