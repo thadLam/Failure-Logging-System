@@ -61,8 +61,10 @@
             <div id="Air Leak" class="tabcontent">
                 <h3><strong>Air Leak</strong></h3>
                 <div class="row">
-                    <label class="control-label"><strong>Type</strong></label>
-                    <select name="type class="form-control" asp-items="@ViewBag.airLeakType"></select>
+                    <div class="col-4">
+                        <label class="control-label block-display"><strong>Type</strong></label>
+                        <select name="type class="form-control center" asp-items="@ViewBag.airLeakType"><option value="">Select Option...</option></select>
+                    </div>
                 </div>
             </div>
 
