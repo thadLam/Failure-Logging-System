@@ -213,5 +213,18 @@ namespace Failure_Logging_System.Controllers
                 return View();
             }
         }
+
+        // POST: RecordController/GenerateReport
+        [HttpPost, ActionName("Generate Report")]
+        public async Task<IActionResult> GenerateReport()
+        {
+            return null;
+        }
+
+        // POST: RecordController/Reporting
+        public async Task<IActionResult> Report()
+        {
+            return null;
+        }
     }
 }
