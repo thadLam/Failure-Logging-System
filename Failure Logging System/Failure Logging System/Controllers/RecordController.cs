@@ -224,6 +224,46 @@ namespace Failure_Logging_System.Controllers
         // GET: RecordController/Reporting
         public ActionResult Reporting()
         {
+            //airLeak Type list
+            List<SelectListItem> drivers = new()
+            {
+                new SelectListItem { Value = "075.001-1", Text = "075.001-1"},
+                new SelectListItem { Value = "075.QX", Text = "075.QX"},
+                new SelectListItem { Value = "075.QXC6", Text = "075.QXC6"},
+                new SelectListItem { Value = "075.QXC8", Text = "075.QXC8"},
+                new SelectListItem { Value = "1.002", Text = "1.002"},
+                new SelectListItem { Value = "1.003", Text = "1.003"},
+                new SelectListItem { Value = "1.007", Text = "1.007"},
+                new SelectListItem { Value = "10.002.2", Text = "10.002.2"},
+                new SelectListItem { Value = "10.004", Text = "10.004"},
+                new SelectListItem { Value = "12.001", Text = "12.001"},
+                new SelectListItem { Value = "2.001", Text = "2.001"},
+                new SelectListItem { Value = "2.003", Text = "2.003"},
+                new SelectListItem { Value = "3.001-1", Text = "3.001-1"},
+                new SelectListItem { Value = "3.003", Text = "3.003"},
+                new SelectListItem { Value = "3.004", Text = "3.004"},
+                new SelectListItem { Value = "4.001-1", Text = "4.001-1"},
+                new SelectListItem { Value = "4.002-1", Text = "4.002-1"},
+                new SelectListItem { Value = "4.003.1", Text = "4.003.1"},
+                new SelectListItem { Value = "4.004", Text = "4.004"},
+                new SelectListItem { Value = "4.005", Text = "4.005"},
+                new SelectListItem { Value = "4.006", Text = "4.006"},
+                new SelectListItem { Value = "5.007", Text = "5.007"},
+                new SelectListItem { Value = "6.5.001F", Text = "6.5.001F"},
+                new SelectListItem { Value = "6.5.002", Text = "6.5.002"},
+                new SelectListItem { Value = "6.5.004", Text = "6.5.004"},
+                new SelectListItem { Value = "6.5.005", Text = "6.5.005"},
+                new SelectListItem { Value = "6.5.006", Text = "6.5.006"},
+                new SelectListItem { Value = "6.5.008", Text = "6.5.008"},
+                new SelectListItem { Value = "8.001F", Text = "8.001F"},
+                new SelectListItem { Value = "8.003.1", Text = "8.003.1"},
+                new SelectListItem { Value = "8.003.2", Text = "8.003.2"},
+                new SelectListItem { Value = "DRV.2X5.001", Text = "DRV.2X5.001"},
+                new SelectListItem { Value = "NE65W-04", Text = "NE65W-04"}
+            };
+
+            //assigning SelectListItem to View Bag
+            ViewBag.drivers = drivers;
             return View();
         }
     }
