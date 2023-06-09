@@ -10,7 +10,7 @@
                 <a asp-controller="Record" asp-action="Reporting" class="btn btn-black">Reporting</a>
             </th>
             <th>
-                <form asp-action="Generate Report">
+                <form asp-controller="Record" asp-action="GenerateReport">
                     <button type="submit" class="btn btn-black" alt="Generate Report Button">Generate Report</button>
                 </form>
             </th>
@@ -20,15 +20,28 @@
 <div class="row">
     
     <div class="col-12 flex-display">
-
+        <!-- Record List -->
+        <table class="black-text">
+            <thead>
+                <!-- Header Columns -->
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Driver
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                </tr>
+            </thead>
+        </table>
     </div>
 </div>
-
-<!-- Record List -->
-<table class="section2">
-    <thead>
-        <tr>
-
-        </tr>
-    </thead>
-</table>

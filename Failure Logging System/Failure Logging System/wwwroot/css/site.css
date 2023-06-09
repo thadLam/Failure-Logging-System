@@ -16,6 +16,7 @@ html {
 
 body {
     margin-bottom: 60px;
+    color: #f0f0f0;
 }
 
 .navbar {
@@ -56,7 +57,7 @@ body {
 }
 
 .white-text {
-    color: #fff;
+    color: #f0f0f0;
 }
 
 .black-text {
@@ -164,8 +165,8 @@ select {
 }
 
 .col-2 {
-    background-color: rgba(0, 0, 0, .5);
-    border: 4px solid rgba(255, 255, 255, .5);
+    background-color: rgba(0, 0, 0, .25);
+    border: 4px solid rgba(255, 255, 255, .75);
     border-radius: 8px;
     padding: 10px;
     height: 700px;
@@ -178,8 +179,8 @@ select {
 }
 
 .col-8 {
-    background-color: rgba(236, 34, 42, .5);
-    border: 4px solid rgba(255, 255, 255, .5);
+    background-color: rgb(231, 71, 60, 1);
+    border: 4px solid rgba(255, 255, 255, .75);
     border-radius: 8px;
     padding: 5px;
     height: 700px;
@@ -241,8 +242,8 @@ textarea.note-control {
 
 /* Style the View Record section */
 .col-12 {
-    background-color: rgba(236, 34, 42, .5);
-    border: 4px solid rgba(255, 255, 255, .5);
+    background-color: rgb(231, 71, 60, 1);
+    border: 4px solid rgba(255, 255, 255, .75);
     border-radius: 8px;
     padding: 5px;
     height: 700px;
@@ -284,4 +285,5 @@ textarea.note-control {
 
 .reporting-options {
     height: 100px;
+    font-size: 20px;
 }

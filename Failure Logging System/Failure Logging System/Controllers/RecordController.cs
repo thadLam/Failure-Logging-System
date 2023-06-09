@@ -253,11 +253,10 @@ namespace Failure_Logging_System.Controllers
             }
         }
 
-        // POST: RecordController/GenerateReport
-        [HttpPost, ActionName("Generate Report")]
-        public async Task<IActionResult> GenerateReport()
+        // GET: RecordController/GenerateReport
+        public IActionResult GenerateReport()
         {
-            return null;
+            return View();
         }
 
         // GET: RecordController/Reporting
