@@ -240,10 +240,6 @@ textarea.note-control {
 }
 
 /* Style the View Record section */
-.section1 {
-    
-}
-
 .col-12 {
     background-color: rgba(236, 34, 42, .5);
     border: 4px solid rgba(255, 255, 255, .5);
@@ -278,4 +274,14 @@ textarea.note-control {
     color: #fff;
     background-color: #000;
     border-color: #000;
+}
+
+/* Style the Reporting section */
+.col-3 {
+    padding: 10em 1em 1em 2em;
+    height: 700px;
+}
+
+.reporting-options {
+    height: 100px;
 }

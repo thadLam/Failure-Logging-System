@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Failure Logging System.props" />
+</Project>

@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Reporting";
+}
+
+<!-- Buttons -->
+<table>
+    <thead>
+        <tr class="info-row">
+            <th>
+                <a asp-controller="Record" asp-action="ViewRecord" class="btn btn-black">Back to List</a>
+            </th>
+        </tr>
+    </thead>
+</table>
+<div class="row">
+    <div class="col-12 flex-display">
+        <div class="col-3">
+            <!-- Driver Options -->
+            <label class="control-label block-display"><strong>Drivers</strong></label>
+            <select name="type class="form-control center flex-display additional-options" asp-items="@ViewBag.drivers"><option value="">Select Option</option></select>
+            <!-- Discarded Checkbox -->
+            <table class="reporting-options">
+                <tr>
+                    <td>
+                        <input id="type" type="checkbox" name="type" value="0" checked="1" />
+                    </td>
+                    <td>
+                        <label for="type"><strong>Type</strong></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="source" type="checkbox" name="source" value="0" checked="1" />
+                    </td>
+                    <td>
+                        <label for="source"><strong>Source</strong></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="location" type="checkbox" name="location" value="0" checked="1" />
+                    </td>
+                    <td>
+                        <label for="location"><strong>Location</strong></label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

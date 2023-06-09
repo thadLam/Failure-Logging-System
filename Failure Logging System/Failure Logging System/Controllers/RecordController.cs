@@ -221,10 +221,10 @@ namespace Failure_Logging_System.Controllers
             return null;
         }
 
-        // POST: RecordController/Reporting
-        public async Task<IActionResult> Report()
+        // GET: RecordController/Reporting
+        public ActionResult Reporting()
         {
-            return null;
+            return View();
         }
     }
 }
