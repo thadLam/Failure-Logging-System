@@ -3,7 +3,8 @@
 To reinvent and optimize the failure logging system to encourage frequent use and ease of use.
 
 ## Instructions
-1. Open the Failure Logging System application  
+1. If haven't already, build the self-contained .NET application using the command listed under the Useful comman codes section
+2. Open the Failure Logging System application  
 (this opens a command prompt detailing what port it's listening on, this will be used in step 3!)
 3. Navigate to any web browser
 4. In the URL field, type in "localhost:(portnumber)" replace (portnumber) with the portnumber found in step 1
