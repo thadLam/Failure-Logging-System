@@ -7,40 +7,7 @@
     <div class="col-2">
         <h5 class="flex-display horizontal-align-text"><strong>Drivers</strong></h5>
         <div>
-            <select name="drivers" multiple class="driver-list">
-                <option value="075.001-1">075.001-1</option>
-                <option value="075.QX">075.QX</option>
-                <option value="075.QXC6">075.QXC6</option>
-                <option value="075.QXC8">075.QXC8</option>
-                <option value="1.002">1.002</option>
-                <option value="1.003">1.003</option>
-                <option value="1.007">1.007</option>
-                <option value="10.002.2">10.002.2</option>
-                <option value="10.004">10.004</option>
-                <option value="12.001">12.001</option>
-                <option value="2.001">2.001</option>
-                <option value="2.003">2.003</option>
-                <option value="3.001-1">3.001-1</option>
-                <option value="3.003">3.003</option>
-                <option value="3.004">3.004</option>
-                <option value="4.001-1">4.001-1</option>
-                <option value="4.002-1">4.002-1</option>
-                <option value="4.003.1">4.003.1</option>
-                <option value="4.004">4.004</option>
-                <option value="4.005">4.005</option>
-                <option value="4.006">4.006</option>
-                <option value="5.007">5.007</option>
-                <option value="6.5.001F">6.5.001F</option>
-                <option value="6.5.002">6.5.002</option>
-                <option value="6.5.004">6.5.004</option>
-                <option value="6.5.005">6.5.005</option>
-                <option value="6.5.006">6.5.006</option>
-                <option value="6.5.008">6.5.008</option>
-                <option value="8.001F">8.001F</option>
-                <option value="8.003.1">8.003.1</option>
-                <option value="8.003.2">8.003.2</option>
-                <option value="DRV.2X5.001">DRV.2X5.001</option>
-                <option value="NE65W-04">NE65W-04</option>
+            <select name="drivers" multiple class="driver-list" asp-items="@ViewBag.drivers">
             </select>
         </div>
     </div>
