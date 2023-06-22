@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj": {}
+    "C:\\Users\\jlsadmin\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj": {
+    "C:\\Users\\jlsadmin\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj",
+        "projectUniqueName": "C:\\Users\\jlsadmin\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj",
         "projectName": "Failure Logging System",
-        "projectPath": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj",
-        "packagesPath": "C:\\Users\\thaddaeusl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thaddaeusl\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\obj\\",
+        "projectPath": "C:\\Users\\jlsadmin\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj",
+        "packagesPath": "C:\\Users\\jlsadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jlsadmin\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\thaddaeusl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jlsadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,6 +45,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

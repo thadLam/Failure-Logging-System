@@ -1,16 +1,37 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Failure_Logging_System.Models;
+using Failure_Logging_System.Data;
+
 
 namespace Failure_Logging_System.Controllers
 {
     public class RecordController : Controller
     {
+        private readonly ApplicationDbContext _context;
 
-        // GET: RecordController/ViewRecord
-        public IActionResult ViewRecord()
+        public RecordController(ApplicationDbContext context)
         {
+            _context = context;
+        }  
+        // GET: RecordController/ViewRecord
+        public IActionResult ViewRecord(string searchString, string currentFilter, int? pageNumber, string sortOrder)
+        {
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+            var drivers = from d in _context.Drivers
+                          select d;
             return View();
         }
 

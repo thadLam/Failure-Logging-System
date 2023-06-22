@@ -29,3 +29,34 @@ C:\Users\thaddaeusl\source\repos\Failure-Logging-System\Failure Logging System\F
 C:\Users\thaddaeusl\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.pdb
 C:\Users\thaddaeusl\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.genruntimeconfig.cache
 C:\Users\thaddaeusl\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\ref\Failure Logging System.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\appsettings.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Failure Logging System.staticwebassets.runtime.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Failure Logging System.exe
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Failure Logging System.deps.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Failure Logging System.runtimeconfig.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Failure Logging System.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Failure Logging System.pdb
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.csproj.AssemblyReference.cache
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.AssemblyInfoInputs.cache
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.AssemblyInfo.cs
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.csproj.CoreCompileInputs.cache
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.RazorAssemblyInfo.cache
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.RazorAssemblyInfo.cs
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets\msbuild.Failure Logging System.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets\msbuild.build.Failure Logging System.props
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Failure Logging System.props
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Failure Logging System.props
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\scopedcss\bundle\Failure Logging System.styles.css
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\scopedcss\projectbundle\Failure Logging System.bundle.scp.css
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\refint\Failure Logging System.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.pdb
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.genruntimeconfig.cache
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\ref\Failure Logging System.dll
