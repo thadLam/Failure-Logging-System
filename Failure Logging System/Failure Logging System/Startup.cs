@@ -14,7 +14,7 @@ public class Startup
     {
         services.AddControllers();
 
-        services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+        services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
     }
 
     public void Configure(WebApplication app, IWebHostEnvironment env)

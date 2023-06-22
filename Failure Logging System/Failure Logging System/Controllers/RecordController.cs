@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Failure_Logging_System.Models;
 using Failure_Logging_System.Data;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Failure_Logging_System.Controllers
 {
@@ -19,7 +19,7 @@ namespace Failure_Logging_System.Controllers
             _context = context;
         }  
         // GET: RecordController/ViewRecord
-        public IActionResult ViewRecord(string searchString, string currentFilter, int? pageNumber, string sortOrder)
+        public async Task<IActionResult> ViewRecord(string searchString, string currentFilter, int? pageNumber, string sortOrder)
         {
             if (searchString != null)
             {
@@ -32,7 +32,24 @@ namespace Failure_Logging_System.Controllers
             ViewBag.CurrentFilter = searchString;
             var drivers = from d in _context.Drivers
                           select d;
-            return View();
+            switch (sortOrder)
+            {
+                case "Name":
+                    drivers = drivers.OrderBy(d => d.Name);
+                    break;
+                case "BatchCode":
+                    drivers = drivers.OrderBy(d => d.BatchCode);
+                    break;
+                case "Date":
+                    drivers = drivers.OrderBy(d => d.Date);
+                    break;
+                default:
+                    drivers = drivers.OrderBy(s => s.Name);
+                    break;
+            }
+
+            int pageSize = 10;
+            return View(await Paging<Driver>.CreateAsync(drivers.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: RecordController/Details/5
