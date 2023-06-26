@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Failure_Logging_System.Models;
 using Failure_Logging_System.Data;
 using Microsoft.EntityFrameworkCore;
@@ -30,21 +26,25 @@ namespace Failure_Logging_System.Controllers
                 searchString = currentFilter;
             }
             ViewBag.CurrentFilter = searchString;
-            var drivers = from d in _context.Drivers
+            var drivers = from d in _context.Driver
                           select d;
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                drivers = drivers.Where(d => d.driverName.Contains(searchString));
+            }
             switch (sortOrder)
             {
-                case "Name":
-                    drivers = drivers.OrderBy(d => d.Name);
+                case "driverName":
+                    drivers = drivers.OrderBy(d => d.driverName);
                     break;
-                case "BatchCode":
+                /*case "BatchCode":
                     drivers = drivers.OrderBy(d => d.BatchCode);
-                    break;
+                    break;*/
                 case "Date":
                     drivers = drivers.OrderBy(d => d.Date);
                     break;
                 default:
-                    drivers = drivers.OrderBy(s => s.Name);
+                    drivers = drivers.OrderBy(s => s.driverName);
                     break;
             }
 
