@@ -108,3 +108,7 @@ C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Fai
 C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.csproj.CopyComplete
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.MvcApplicationPartsAssemblyInfo.cs

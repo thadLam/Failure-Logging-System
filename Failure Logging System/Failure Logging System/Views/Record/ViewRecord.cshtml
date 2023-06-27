@@ -15,64 +15,112 @@
                     <button type="submit" class="btn btn-black" alt="Generate Report Button">Generate Report</button>
                 </form>
             </th>
+            <th class="vertical-align-text flex-display">
+                @using (Html.BeginForm("ViewRecord", "Record", FormMethod.Post, new { @class = "form-height" }))
+                {
+                    <p>
+                        @Html.TextBox("SearchString")<input type="submit" value="Search" />
+                    </p>
+                }
+            </th>
         </tr>
     </thead>
 </table>
 <div class="row">
     
     <div class="col-12 flex-display">
-        <!-- Record List -->
-        <table class="black-text">
-            <thead>
-                <!-- Header Columns -->
-                <tr>
-                    <th>
-                        ID
-                    </th>
-                    <th>
-                        Driver
-                    </th>
-                    <th>
-                        Date
-                    </th>
-                    <th>
-                        Type
-                    </th>
-                    <th>
-                        Location
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.driverName)
-                        </td>
+        <div class="center full-width">
+            <!-- Record List -->
+            <table class="black-text table">
+                <thead>
+                    <!-- Header Columns -->
+                    <tr class="table-header">
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            @Html.ActionLink("Driver", "ViewRecord", new { sortOrder = "driverName", currentFilter = ViewBag.CurrentFilter})
+                        </th>
+                        <th>
+                            BatchCode
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Location
+                        </th>
+                        <th>
+                            FailureFault
+                        </th>
+                        <th>
+                            Discarded
+                        </th>
                     </tr>
-                }
-            </tbody>
-        </table>
-        @{
-            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-        }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.driverName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BatchCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FailureFault)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Discarded)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @*<div class="paging-div full-width">
+            @{
+                var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+            }
 
-        <a asp-action="ViewRecord"
-           asp-route-sortOrder="@ViewData["CurrentSort"]"
-           asp-route-pageNumber="@(Model.PageIndex - 1)"
-           asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn @prevDisabled">
-            Previous
-        </a>
-        <a asp-action="ViewRecord"
-           asp-route-sortOrder="@ViewData["CurrentSort"]"
-           asp-route-pageNumber="@(Model.PageIndex + 1)"
-           asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn @nextDisabled">
-            Next
-        </a>
-        Page @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex) of @Model.TotalPages
+            <a asp-action="ViewRecord"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn @prevDisabled">
+                Previous
+            </a>
+            <a asp-action="ViewRecord"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn @nextDisabled">
+                Next
+            </a>
+            Page @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex) of @Model.TotalPages
+        </div>*@
     </div>
 </div>

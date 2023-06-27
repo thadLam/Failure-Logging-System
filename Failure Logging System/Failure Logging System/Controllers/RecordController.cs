@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Failure_Logging_System.Models;
 using Failure_Logging_System.Data;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace Failure_Logging_System.Controllers
 {
@@ -37,14 +38,14 @@ namespace Failure_Logging_System.Controllers
                 case "driverName":
                     drivers = drivers.OrderBy(d => d.driverName);
                     break;
-                /*case "BatchCode":
+                case "BatchCode":
                     drivers = drivers.OrderBy(d => d.BatchCode);
-                    break;*/
+                    break;
                 case "Date":
-                    drivers = drivers.OrderBy(d => d.Date);
+                    drivers = drivers.OrderByDescending(d => d.Date);
                     break;
                 default:
-                    drivers = drivers.OrderBy(s => s.driverName);
+                    drivers = drivers.OrderByDescending(d => d.Date);
                     break;
             }
 
