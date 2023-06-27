@@ -29,38 +29,35 @@
 <div class="row">
     
     <div class="col-12 flex-display">
-        <div class="center full-width">
+        <div class="center table-div">
             <!-- Record List -->
             <table class="black-text table">
                 <thead>
                     <!-- Header Columns -->
                     <tr class="table-header">
                         <th>
-                            ID
-                        </th>
-                        <th>
                             @Html.ActionLink("Driver", "ViewRecord", new { sortOrder = "driverName", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            BatchCode
+                            @Html.ActionLink("BatchCode", "ViewRecord", new { sortOrder = "BatchCode", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            Date
+                            @Html.ActionLink("Date", "ViewRecord", new { sortOrder = "Date", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            Category
+                            @Html.ActionLink("Category", "ViewRecord", new { sortOrder = "Category", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            Type
+                            @Html.ActionLink("Type", "ViewRecord", new { sortOrder = "Type", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            Location
+                            @Html.ActionLink("Location", "ViewRecord", new { sortOrder = "Location", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            FailureFault
+                            @Html.ActionLink("FailureFault", "ViewRecord", new { sortOrder = "FailureFault", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>
-                            Discarded
+                            @Html.ActionLink("Discarded", "ViewRecord", new { sortOrder = "Discarded", currentFilter = ViewBag.CurrentFilter})
                         </th>
                     </tr>
                 </thead>
@@ -68,9 +65,6 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ID)
-                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.driverName)
                             </td>
@@ -100,27 +94,27 @@
                 </tbody>
             </table>
         </div>
-        @*<div class="paging-div full-width">
-            @{
-                var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-                var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-            }
+    </div>
+    <div class="paging-div">
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
 
-            <a asp-action="ViewRecord"
-               asp-route-sortOrder="@ViewData["CurrentSort"]"
-               asp-route-pageNumber="@(Model.PageIndex - 1)"
-               asp-route-currentFilter="@ViewData["CurrentFilter"]"
-               class="btn @prevDisabled">
-                Previous
-            </a>
-            <a asp-action="ViewRecord"
-               asp-route-sortOrder="@ViewData["CurrentSort"]"
-               asp-route-pageNumber="@(Model.PageIndex + 1)"
-               asp-route-currentFilter="@ViewData["CurrentFilter"]"
-               class="btn @nextDisabled">
-                Next
-            </a>
-            Page @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex) of @Model.TotalPages
-        </div>*@
+        <a asp-action="ViewRecord"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn @prevDisabled">
+            Previous
+        </a>
+        <a asp-action="ViewRecord"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn @nextDisabled">
+            Next
+        </a>
+        Page @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex) of @Model.TotalPages
     </div>
 </div>

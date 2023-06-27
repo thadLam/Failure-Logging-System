@@ -18,6 +18,9 @@ namespace Failure_Logging_System.Controllers
         // GET: RecordController/ViewRecord
         public async Task<IActionResult> ViewRecord(string searchString, string currentFilter, int? pageNumber, string sortOrder)
         {
+            ViewBag.CurrentSort = sortOrder;
+
+            /* Filtering */
             if (searchString != null)
             {
                 pageNumber = 1;
@@ -26,7 +29,9 @@ namespace Failure_Logging_System.Controllers
             {
                 searchString = currentFilter;
             }
+
             ViewBag.CurrentFilter = searchString;
+
             var drivers = from d in _context.Driver
                           select d;
             if(!String.IsNullOrEmpty(searchString))
@@ -43,6 +48,21 @@ namespace Failure_Logging_System.Controllers
                     break;
                 case "Date":
                     drivers = drivers.OrderByDescending(d => d.Date);
+                    break;
+                case "Category":
+                    drivers = drivers.OrderBy(d => d.Category);
+                    break;
+                case "Type":
+                    drivers = drivers.OrderBy(d => d.Type);
+                    break;
+                case "Location":
+                    drivers = drivers.OrderBy(d => d.Location);
+                    break;
+                case "FailureFault":
+                    drivers = drivers.OrderBy(d => d.FailureFault);
+                    break;
+                case "Discarded":
+                    drivers = drivers.OrderBy(d => d.Discarded);
                     break;
                 default:
                     drivers = drivers.OrderByDescending(d => d.Date);
