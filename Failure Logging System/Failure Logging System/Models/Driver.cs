@@ -11,6 +11,7 @@
         public string? Location { get; set; }
         public string FailureFault { get; set; }
         public bool Discarded { get; set; }
+        public string? Notes { get; set; }
         public Driver() { }
     }
 }

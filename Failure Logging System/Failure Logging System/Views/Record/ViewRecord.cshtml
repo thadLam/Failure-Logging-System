@@ -59,6 +59,9 @@
                         <th>
                             @Html.ActionLink("Discarded", "ViewRecord", new { sortOrder = "Discarded", currentFilter = ViewBag.CurrentFilter})
                         </th>
+                        <th>
+                            Notes
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,6 +91,9 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Discarded)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Notes)
                             </td>
                         </tr>
                     }
