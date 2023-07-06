@@ -14,11 +14,13 @@ namespace Failure_Logging_System.Controllers
         public RecordController(ApplicationDbContext context)
         {
             _context = context;
-        }  
+        }
+
         // GET: RecordController/ViewRecord
         public async Task<IActionResult> ViewRecord(string searchString, string currentFilter, int? pageNumber, string sortOrder)
         {
             ViewBag.CurrentSort = sortOrder;
+            ViewBag.SortClass = "";
 
             /* Filtering */
             if (searchString != null)

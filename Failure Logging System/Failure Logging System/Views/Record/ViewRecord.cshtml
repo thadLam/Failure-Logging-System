@@ -105,14 +105,14 @@
            asp-route-sortOrder="@ViewData["CurrentSort"]"
            asp-route-pageNumber="@(Model.PageIndex - 1)"
            asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn @prevDisabled">
+           class="btn @prevDisabled btn-paging">
             Previous
         </a>
         <a asp-action="ViewRecord"
            asp-route-sortOrder="@ViewData["CurrentSort"]"
            asp-route-pageNumber="@(Model.PageIndex + 1)"
            asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn @nextDisabled">
+           class="btn @nextDisabled btn-paging">
             Next
         </a>
         Page @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex) of @Model.TotalPages

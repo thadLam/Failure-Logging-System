@@ -281,6 +281,12 @@ textarea.note-control {
     border-color: #000;
 }
 
+.btn-paging {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
 .table-div {
     height: 100%;
     width: 100%;
@@ -296,6 +302,16 @@ textarea.note-control {
     background-color: #f0f0f0;
 }
 
+.table-header a {
+    color: #000;
+    text-decoration: none;
+}
+
+.selected-header {
+    color: #000;
+    text-decoration: underline !important;
+}
+
 .form-height {
     height: 32px;
 }
@@ -305,6 +321,7 @@ textarea.note-control {
     width: 100%;
     align-items: center;
     display: flex;
+    color: #000;
 }
 
 /* Style the Reporting section */
