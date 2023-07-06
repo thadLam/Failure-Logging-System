@@ -35,28 +35,28 @@
                 <thead>
                     <!-- Header Columns -->
                     <tr class="table-header">
-                        <th>
+                        <th class="table-header">
                             @Html.ActionLink("Driver", "ViewRecord", new { sortOrder = "driverName", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("BatchCode", "ViewRecord", new { sortOrder = "BatchCode", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("Date", "ViewRecord", new { sortOrder = "Date", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("Category", "ViewRecord", new { sortOrder = "Category", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("Type", "ViewRecord", new { sortOrder = "Type", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("Location", "ViewRecord", new { sortOrder = "Location", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("FailureFault", "ViewRecord", new { sortOrder = "FailureFault", currentFilter = ViewBag.CurrentFilter})
                         </th>
-                        <th>
+                        <th class="normal-header">
                             @Html.ActionLink("Discarded", "ViewRecord", new { sortOrder = "Discarded", currentFilter = ViewBag.CurrentFilter})
                         </th>
                         <th>

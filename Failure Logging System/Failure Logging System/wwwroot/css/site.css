@@ -307,11 +307,6 @@ textarea.note-control {
     text-decoration: none;
 }
 
-.selected-header {
-    color: #000;
-    text-decoration: underline !important;
-}
-
 .form-height {
     height: 32px;
 }
