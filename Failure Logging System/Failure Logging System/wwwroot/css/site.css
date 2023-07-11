@@ -329,3 +329,7 @@ textarea.note-control {
     height: 100px;
     font-size: 20px;
 }
+
+#reportrange, .daterangepicker {
+    color: #000 !important;
+}
