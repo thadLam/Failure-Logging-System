@@ -110,6 +110,11 @@ body {
     padding: 0px;
 }
 
+/* Style the form */
+.driver-form {
+    display: inherit;
+}
+
 /* Style the tab */
 .tab {
     overflow: hidden;

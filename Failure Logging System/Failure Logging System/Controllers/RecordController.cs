@@ -260,14 +260,22 @@ namespace Failure_Logging_System.Controllers
         // POST: RecordController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create(Driver driver)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                for (int i = 0; i < ViewBag.quantity; i++)
+                {
+                    driver.driverName = ViewBag.drivers;
+                    driver.Category = ViewBag.category;
+                    _context.Add(driver);
+                    await _context.SaveChangesAsync();
+                }
+                return RedirectToAction(nameof(ViewRecord));
             }
             catch
             {
+                await Response.WriteAsync("Failed to add record. Ensure connection to database and try again.");
                 return View();
             }
         }
