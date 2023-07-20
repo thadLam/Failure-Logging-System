@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 using Highsoft.Web.Mvc.Charts;
 using System.Diagnostics;
+using System.Text;
 
 namespace Failure_Logging_System.Controllers
 {
@@ -332,9 +333,36 @@ namespace Failure_Logging_System.Controllers
         }
 
         // GET: RecordController/GenerateReport
-        public IActionResult GenerateReport()
+        [HttpPost, ActionName("GenerateReport")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> GenerateReport()
         {
-            return View();
+            //get the device we are viewing
+            DateTime today = DateTime.Now;
+            var driverIterator = await _context.Driver.ToListAsync();
+            var csv = new StringBuilder();
+            //allocate memory to create the download
+            using (MemoryStream stream = new MemoryStream())
+            {
+                using var file = new StreamWriter(stream);
+                file.WriteLine("Driver,BatchCode,Time,Category,Type,Locaiton,Failure Fault,Discarded,Notes");
+                for (int i = 0; i < driverIterator.Count; i++)
+                {
+                    var name = driverIterator[i].driverName;
+                    var batchCode = driverIterator[i].BatchCode;
+                    var date = driverIterator[i].Date;
+                    var category = driverIterator[i].Category;
+                    var type = driverIterator[i].Type;
+                    var location = driverIterator[i].Location;
+                    var failureFault = driverIterator[i].FailureFault;
+                    var discarded = driverIterator[i].Discarded;
+                    var notes = driverIterator[i].Notes;
+                    var line = string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8}", name, batchCode, date, category, type, location, failureFault, discarded, notes);
+                    file.WriteLine(line);
+                    file.Flush();
+                }
+                return File(stream.ToArray(), "text/plain", "Driver_Report_" + today + ".csv");
+            }
         }
 
         // GET: RecordController/Reporting
