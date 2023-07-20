@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DDggVPuOr6rvLo2y6tX3G3q+8oFPrzBOOPoYDx7UTfteJ4VsUxUyQYyu5sg7Pi8tmhfay4wRdl2FSo57AesyJg==",
+  "dgSpecHash": "dU3XZMLtUIKeltL7tEwX2czSnCnodPxEuOdNkE10MAAbe6rK/q+S2M/LI1+g+KhRK0hoPXsj1h4oWN2SG4srXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jlsadmin\\source\\repos\\Failure-Logging-System\\Failure Logging System\\Failure Logging System\\Failure Logging System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jlsadmin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\jlsadmin\\.nuget\\packages\\highsoft.highcharts\\11.0.1.1\\highsoft.highcharts.11.0.1.1.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\jetbrains.annotations\\2022.3.1\\jetbrains.annotations.2022.3.1.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -38,6 +39,7 @@
     "C:\\Users\\jlsadmin\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\jlsadmin\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
     "C:\\Users\\jlsadmin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",

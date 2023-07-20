@@ -112,3 +112,5 @@ C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Fai
 C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\X.PagedList.dll
 C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
 C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\obj\Debug\net6.0\Failure Logging System.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Highcharts.dll
+C:\Users\jlsadmin\source\repos\Failure-Logging-System\Failure Logging System\Failure Logging System\bin\Debug\net6.0\Newtonsoft.Json.dll

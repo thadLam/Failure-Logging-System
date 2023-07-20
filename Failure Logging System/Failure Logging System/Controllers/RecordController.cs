@@ -4,6 +4,8 @@ using Failure_Logging_System.Models;
 using Failure_Logging_System.Data;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
+using Highsoft.Web.Mvc.Charts;
+using System.Diagnostics;
 
 namespace Failure_Logging_System.Controllers
 {
@@ -260,14 +262,21 @@ namespace Failure_Logging_System.Controllers
         // POST: RecordController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Driver driver)
+        public async Task<IActionResult> Create([Bind("")]Driver driver)
         {
             try
             {
                 for (int i = 0; i < ViewBag.quantity; i++)
                 {
                     driver.driverName = ViewBag.drivers;
+                    driver.BatchCode = ViewBag.batchCode;
+                    driver.Date = DateTime.Now;
                     driver.Category = ViewBag.category;
+                    driver.Type = ViewBag.type;
+                    driver.Location = ViewBag.location;
+                    driver.FailureFault = ViewBag.failureFault;
+                    driver.Discarded = ViewBag.discarded;
+                    driver.Notes = ViewBag.notes;
                     _context.Add(driver);
                     await _context.SaveChangesAsync();
                 }
@@ -329,7 +338,7 @@ namespace Failure_Logging_System.Controllers
         }
 
         // GET: RecordController/Reporting
-        public ActionResult Reporting()
+        public async Task<IActionResult> Reporting()
         {
             //drivers list
             List<SelectListItem> drivers = new()
@@ -368,6 +377,57 @@ namespace Failure_Logging_System.Controllers
                 new SelectListItem { Value = "DRV.2X5.001", Text = "DRV.2X5.001"},
                 new SelectListItem { Value = "NE65W-04", Text = "NE65W-04"}
             };
+
+            var driverIterator = await _context.Driver.ToListAsync();
+
+            //count the # of drivers
+            //initialize counters
+            int AT = 0, SPL = 0, W = 0, PP = 0, CUBE = 0, total = driverIterator.Count;
+
+            //iterate through records
+            for (int i = 0; i < driverIterator.Count; i++)
+            {
+                switch (driverIterator[i].driverName)
+                {
+                    case "AT":
+                        AT++;
+                        break;
+                    case "SPL":
+                        SPL++;
+                        break;
+                    case "W":
+                        W++;
+                        break;
+                    case "PP":
+                        PP++;
+                        break;
+                    case "CUBE":
+                        CUBE++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            //calculating driver / total percentage
+            double ATpercent = (Convert.ToDouble(AT) / Convert.ToDouble(total)) * 100;
+            double SPLpercent = (Convert.ToDouble(SPL) / Convert.ToDouble(total)) * 100;
+            double Wpercent = (Convert.ToDouble(W) / Convert.ToDouble(total)) * 100;
+            double PPpercent = (Convert.ToDouble(PP) / Convert.ToDouble(total)) * 100;
+            double CUBEpercent = (Convert.ToDouble(CUBE) / Convert.ToDouble(total)) * 100;
+
+            //create chart
+            List<PieSeriesData> pieData = new List<PieSeriesData>();
+
+            pieData.Add(new PieSeriesData { Name = "AT", Y = Math.Round(ATpercent, 1), Sliced = true, Selected = true, Color = "Blue" });
+            pieData.Add(new PieSeriesData { Name = "SPL", Y = Math.Round(SPLpercent, 1), Sliced = true, Selected = true, Color = "Red" });
+            pieData.Add(new PieSeriesData { Name = "W", Y = Math.Round(Wpercent, 1), Sliced = true, Selected = true, Color = "Yellow" });
+            pieData.Add(new PieSeriesData { Name = "PP", Y = Math.Round(PPpercent, 1), Sliced = true, Selected = true, Color = "Green" });
+            pieData.Add(new PieSeriesData { Name = "CUBE", Y = Math.Round(CUBEpercent, 1), Sliced = true, Selected = true, Color = "Purple" });
+
+            //assigning ViewData
+            ViewData["pieData"] = pieData;
+            ViewData["total"] = total;
 
             //assigning SelectListItem to View Bag
             ViewBag.drivers = drivers;

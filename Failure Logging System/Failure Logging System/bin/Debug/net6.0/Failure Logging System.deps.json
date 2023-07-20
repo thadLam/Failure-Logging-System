@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Failure Logging System/1.0.0": {
         "dependencies": {
+          "Highsoft.Highcharts": "11.0.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.7",
           "X.PagedList.Mvc.Core": "8.4.7"
         },
@@ -46,6 +47,17 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
+          }
+        }
+      },
+      "Highsoft.Highcharts/11.0.1.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Highcharts.dll": {
+            "assemblyVersion": "11.0.1.1",
+            "fileVersion": "11.0.1.1"
           }
         }
       },
@@ -405,6 +417,14 @@
           }
         }
       },
+      "Newtonsoft.Json/12.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.22727"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {},
       "System.Configuration.ConfigurationManager/5.0.0": {
         "dependencies": {
@@ -663,6 +683,13 @@
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
     },
+    "Highsoft.Highcharts/11.0.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+pqad0Ss6ymE4ADeeUUocR2Vc4k7ujsHxFB+dhsDhutd15jDh814J9/5MvzWNSqy6HmUTdR4rwU97H9A80n2xQ==",
+      "path": "highsoft.highcharts/11.0.1.1",
+      "hashPath": "highsoft.highcharts.11.0.1.1.nupkg.sha512"
+    },
     "JetBrains.Annotations/2022.3.1": {
       "type": "package",
       "serviceable": true,
@@ -886,6 +913,13 @@
       "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "path": "newtonsoft.json/12.0.1",
+      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

@@ -1,5 +1,59 @@
-﻿@{
+﻿<script src="https://code.highcharts.com/11.0.1/highcharts.js"></script>
+<script src="https://code.highcharts.com/11.0.1/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/11.0.1/modules/exporting.js"></script>
+
+@model Failure_Logging_System.Models.Driver
+@using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering
+@using System.Collections
+
+@{
     ViewData["Title"] = "Reporting";
+    var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
+        {
+            Options3d = new ChartOptions3d
+            {
+                Enabled = true,
+                Alpha = 45,
+                Beta = 0
+            }
+        },
+        Title = new Title
+        {
+            Text = "Driver Failure Logs"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = string.Format("Out of {0} drivers", ViewData["total"])
+        },
+        Tooltip = new Tooltip
+        {
+            PointFormat = "{series.name}: <b>{point.percentage: .1f}%</b>"
+        },
+        PlotOptions = new PlotOptions
+        {
+            Pie = new PlotOptionsPie
+            {
+                AllowPointSelect = true,
+                Cursor = PlotOptionsPieCursor.Pointer,
+                Depth = 35,
+                DataLabels = new Hashtable { { "enabled", true}, { "format", "<b>{point.name}</b>"}}
+            }
+        },
+        Series = new List<Series>
+        {
+            new PieSeries
+            {
+                Name = "Percentage of Drivers",
+                Data = ViewData["pieData"] as List<PieSeriesData>
+            },
+        }
+    };
+
+    chartOptions.ID = "chart";
+    var renderer = new HighchartsRenderer(chartOptions);
 }
 
 <!-- Buttons -->
@@ -51,6 +105,15 @@
                 <i class="fa fa-calendar"></i>&nbsp;
                 <span></span> <i class="fa fa-caret-down"></i>
             </div>
+        </div>
+        <div>
+            <figure class="highcharts-figure">
+                @Html.Raw(renderer.RenderHtml())
+                <div id="container"></div>
+                <p class="highcharts-description">
+                    <i>Drivers with Failure Logs</i><br />
+                </p>
+            </figure>
         </div>
     </div>
 </div>
