@@ -263,29 +263,41 @@ namespace Failure_Logging_System.Controllers
         // POST: RecordController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("")]Driver driver)
+        public async Task<IActionResult> Create(Driver driver)
         {
             try
             {
-                for (int i = 0; i < ViewBag.quantity; i++)
+                int quantity = int.Parse(Request.Form["quantity"]);
+                for (int i = 0; i < quantity; i++)
                 {
-                    driver.driverName = ViewBag.drivers;
-                    driver.BatchCode = ViewBag.batchCode;
+                    // Set properties of driver
+                    driver.driverName = Request.Form["drivers"];
+                    driver.BatchCode = Request.Form["batchCode"];
                     driver.Date = DateTime.Now;
-                    driver.Category = ViewBag.category;
-                    driver.Type = ViewBag.type;
-                    driver.Location = ViewBag.location;
-                    driver.FailureFault = ViewBag.failureFault;
-                    driver.Discarded = ViewBag.discarded;
-                    driver.Notes = ViewBag.notes;
+
+                    // Since you have tabs, you should ensure the selected category, type, and location are retrieved correctly
+                    string category = Request.Form["category"];
+                    string type = Request.Form["type"];
+                    string location = Request.Form["location"];
+
+                    driver.Category = category;
+                    driver.Type = type;
+                    driver.Location = location;
+
+                    driver.FailureFault = Request.Form["failureFault"];
+                    driver.Discarded = Request.Form["discarded"] == "on"; // For checkboxes, check if it's "on" to set Discarded to true
+                    driver.Notes = Request.Form["notes"];
+
+                    // Add driver to context and save changes
                     _context.Add(driver);
                     await _context.SaveChangesAsync();
                 }
+
                 return RedirectToAction(nameof(ViewRecord));
             }
             catch
             {
-                await Response.WriteAsync("Failed to add record. Ensure connection to database and try again.");
+                await Response.WriteAsync("Failed to add record. Ensure connection to the database and try again.");
                 return View();
             }
         }

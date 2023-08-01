@@ -18,11 +18,11 @@
             <div class="main-section">
                 <!-- Tab links -->
                 <div class="tab">
-                    <input class="tablinks" onclick="openCategory(event, 'Air Leak')" value="@ViewBag.category"><strong>Air Leak</strong></input>
-                    <input class="tablinks" onclick="openCategory(event, 'Cosmetic')" value="@ViewBag.category"><strong>Cosmetic</strong></input>
-                    <button class="tablinks" onclick="openCategory(event, 'Listening')" value="@ViewBag.category"><strong>Listening</strong></button>
-                    <button class="tablinks" onclick="openCategory(event, 'Polarity')" value="@ViewBag.category"><strong>Polarity</strong></button>
-                    <button class="tablinks" onclick="openCategory(event, 'AP Test')" value="@ViewBag.category"><strong>AP Test</strong></button>
+                    <button class="tablinks" data-category="Air Leak" onclick="openCategory(event)" id="category"><strong>Air Leak</strong></button>
+                    <button class="tablinks" data-category="Cosmetic" onclick="openCategory(event)" id="category"><strong>Cosmetic</strong></button>
+                    <button class="tablinks" data-category="Listening" onclick="openCategory(event)" id="category"><strong>Listening</strong></button>
+                    <button class="tablinks" data-category="Polarity" onclick="openCategory(event)" id="category"><strong>Polarity</strong></button>
+                    <button class="tablinks" data-category="AP Test" onclick="openCategory(event)" id="category"><strong>AP Test</strong></button>
                 </div>
 
                 <!-- Tab content -->
@@ -166,25 +166,38 @@
 
 @section Scripts {
     <script type="text/javascript">
-        function openCategory(evt, category) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
+        document.addEventListener("DOMContentLoaded", function () {
             // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
 
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+            // Add click event listeners to tab links
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].addEventListener("click", function (event) {
+                    // Prevent form submission
+                    event.preventDefault();
 
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(category).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
+                    // Remove "active" class from all tab buttons
+                    for (var j = 0; j < tablinks.length; j++) {
+                        tablinks[j].classList.remove("active");
+                    }
+
+                    // Get the target category from the clicked tab button
+                    var category = this.dataset.category;
+
+                    // Show the corresponding tab content
+                    for (var j = 0; j < tabcontent.length; j++) {
+                        tabcontent[j].style.display = "none";
+                    }
+                    document.getElementById(category).style.display = "block";
+
+                    // Add "active" class to the clicked tab button
+                    this.classList.add("active");
+                });
+            }
+        });
     </script>
 }
