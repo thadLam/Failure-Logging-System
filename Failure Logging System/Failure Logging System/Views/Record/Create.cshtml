@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Failure_Logging_System.Models.Driver
+
+@{
     ViewData["Title"] = "Add New Record";
 }
 
@@ -18,12 +20,15 @@
             <div class="main-section">
                 <!-- Tab links -->
                 <div class="tab">
-                    <button class="tablinks" data-category="Air Leak" onclick="openCategory(event)" id="category"><strong>Air Leak</strong></button>
-                    <button class="tablinks" data-category="Cosmetic" onclick="openCategory(event)" id="category"><strong>Cosmetic</strong></button>
-                    <button class="tablinks" data-category="Listening" onclick="openCategory(event)" id="category"><strong>Listening</strong></button>
-                    <button class="tablinks" data-category="Polarity" onclick="openCategory(event)" id="category"><strong>Polarity</strong></button>
-                    <button class="tablinks" data-category="AP Test" onclick="openCategory(event)" id="category"><strong>AP Test</strong></button>
+                    <button class="tablinks" data-category="Air Leak" id="category"><strong>Air Leak</strong></button>
+                    <button class="tablinks" data-category="Cosmetic" id="category"><strong>Cosmetic</strong></button>
+                    <button class="tablinks" data-category="Listening" id="category"><strong>Listening</strong></button>
+                    <button class="tablinks" data-category="Polarity" id="category"><strong>Polarity</strong></button>
+                    <button class="tablinks" data-category="AP Test" id="category"><strong>AP Test</strong></button>
                 </div>
+
+                <!-- Store the category selection -->
+                <input type="hidden" name="category" id="categoryInput" value="" />
 
                 <!-- Tab content -->
                 <div id="Air Leak" class="tabcontent">
@@ -33,12 +38,12 @@
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Type</strong></label>
                             <!-- Type Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.airLeakType"><option value="" disabled selected>Select Option</option></select>
+                            <select name="type" class="form-control center" asp-items="@ViewBag.airLeakType"><option value="" disabled selected>Select Option</option></select>
                         </div>
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Location</strong></label>
                             <!-- Location Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.airLeakLocation"><option value="" disabled selected>Select Option</option></select>
+                            <select name="location" class="form-control center" asp-items="@ViewBag.airLeakLocation"><option value="" disabled selected>Select Option</option></select>
                         </div>
                     </div>
                 </div>
@@ -50,7 +55,7 @@
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Location</strong></label>
                             <!-- Location Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.cosmeticLocation"><option value="" disabled selected>Select Option</option></select>
+                            <select name="location" class="form-control center" asp-items="@ViewBag.cosmeticLocation"><option value="" disabled selected>Select Option</option></select>
                         </div>
                     </div>
                 </div>
@@ -62,12 +67,12 @@
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Type</strong></label>
                             <!-- Type Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.listeningType"><option value="" disabled selected>Select Option</option></select>
+                            <select name="type" class="form-control center" asp-items="@ViewBag.listeningType"><option value="" disabled selected>Select Option</option></select>
                         </div>
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Location</strong></label>
                             <!-- Location Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.listeningLocation"><option value="" disabled selected>Select Option</option></select>
+                            <select name="location" class="form-control center" asp-items="@ViewBag.listeningLocation"><option value="" disabled selected>Select Option</option></select>
                         </div>
                     </div>
                 </div>
@@ -79,7 +84,7 @@
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Location</strong></label>
                             <!-- Location Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.polarityLocation"><option value="" disabled selected>Select Option</option></select>
+                            <select name="location" class="form-control center" asp-items="@ViewBag.polarityLocation"><option value="" disabled selected>Select Option</option></select>
                         </div>
                     </div>
                 </div>
@@ -91,12 +96,12 @@
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Type</strong></label>
                             <!-- Type Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.apTestType"><option value="" disabled selected>Select Option</option></select>
+                            <select name="type" class="form-control center" asp-items="@ViewBag.apTestType"><option value="" disabled selected>Select Option</option></select>
                         </div>
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Location</strong></label>
                             <!-- Location Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.apTestLocation"><option value="" disabled selected>Select Option</option></select>
+                            <select name="location" class="form-control center" asp-items="@ViewBag.apTestLocation"><option value="" disabled selected>Select Option</option></select>
                         </div>
                     </div>
                 </div>
@@ -108,7 +113,7 @@
                         <div class="col-4">
                             <label class="control-label block-display"><strong>Location</strong></label>
                             <!-- Location Options -->
-                            <select name="type class="form-control center" asp-items="@ViewBag.groundingLocation"><option value="" disabled selected>Select Option</option></select>
+                            <select name="location" class="form-control center" asp-items="@ViewBag.groundingLocation"><option value="" disabled selected>Select Option</option></select>
                         </div>
                     </div>
                 </div>
@@ -117,7 +122,7 @@
                 <div class="mb-3 note-box center">
                     <div class="notes">
                         <label for="textArea" class="form-label block-display"><strong>Notes</strong></label>
-                        <textarea class="form-control note-control flex-display" id="Notes" rows="5" placeholder="Notes..." value="@ViewBag.notes""></textarea>
+                        <textarea class="form-control note-control flex-display" id="Notes" rows="5" placeholder="Notes..." value="@ViewBag.notes"></textarea>
                     </div>
                 </div>
             </div>
@@ -131,16 +136,16 @@
                 <textarea class="form-control text-input" id="dateCode" rows="1" placeholder="ID"></textarea>
                 <!-- Model Options -->
                 <label class="control-label block-display"><strong>Model</strong></label>
-                <select name="type class="form-control center flex-display additional-options" asp-items="@ViewBag.models"><option value="" disabled selected>Select Option</option></select>
+                <select name="Models" class="form-control center flex-display additional-options select-style" asp-items="@ViewBag.models"><option value="" disabled selected>Select Option</option></select>
                 <!-- Date Code -->
                 <label class="control-label block-display"><strong>Batch Code</strong></label>
                 <textarea class="form-control text-input" id="batchCode" rows="1" placeholder="Batch Code" value="@ViewBag.batchCode"></textarea>
                 <!-- Failure Fault Options -->
                 <label class="control-label block-display"><strong>Failure Fault</strong></label>
-                <select name="type class="form-control center flex-display additional-options" asp-items="@ViewBag.failureFault"><option value="" disabled selected>Select Option</option></select>
+                <select name="FailureFault" class="form-control center flex-display additional-options select-style" asp-items="@ViewBag.failureFault"><option value="" disabled selected>Select Option</option></select>
                 <!-- Quantity Options -->
                 <label class="control-label block-display"><strong>Quantity</strong></label>
-                <select name="type class="form-control center flex-display additional-options" asp-items="@ViewBag.quantity"></select>
+                <select name="Quantity" class="form-control center flex-display additional-options" asp-items="@ViewBag.quantity"></select>
                 <!-- Discarded Checkbox -->
                 <table>
                     <tr>
@@ -187,6 +192,10 @@
 
                     // Get the target category from the clicked tab button
                     var category = this.dataset.category;
+                    console.log(category);
+
+                    // Set the value of the hidden input field
+                    document.getElementById("categoryInput").value = category;
 
                     // Show the corresponding tab content
                     for (var j = 0; j < tabcontent.length; j++) {

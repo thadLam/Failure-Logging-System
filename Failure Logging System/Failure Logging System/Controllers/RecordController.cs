@@ -7,6 +7,7 @@ using X.PagedList;
 using Highsoft.Web.Mvc.Charts;
 using System.Diagnostics;
 using System.Text;
+using System.Linq.Expressions;
 
 namespace Failure_Logging_System.Controllers
 {
@@ -263,40 +264,59 @@ namespace Failure_Logging_System.Controllers
         // POST: RecordController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Driver driver)
+        public async Task<IActionResult> Create(IFormCollection formCollection)
         {
+            Debug.WriteLine("Create action reached");
             try
             {
-                int quantity = int.Parse(Request.Form["quantity"]);
+                int quantity = int.Parse(formCollection["Quantity"]);
+                Debug.WriteLine("quantity is ");
+                Debug.WriteLine(quantity);
                 for (int i = 0; i < quantity; i++)
                 {
-                    // Set properties of driver
-                    driver.driverName = Request.Form["drivers"];
-                    driver.BatchCode = Request.Form["batchCode"];
-                    driver.Date = DateTime.Now;
+                    Driver driver = new Driver();
+                    
+                    // Bind form values to driver object
+                    if (ModelState.IsValid)
+                    {
+                        // Set properties of driver
+                        driver.driverName = formCollection["drivers"];
+                        driver.BatchCode = formCollection["batchCode"];
+                        driver.Date = DateTime.Now;
 
-                    // Since you have tabs, you should ensure the selected category, type, and location are retrieved correctly
-                    string category = Request.Form["category"];
-                    string type = Request.Form["type"];
-                    string location = Request.Form["location"];
+                        // Ensure the selected category, type, and location are retrieved correctly
+                        string category = formCollection["category"];
+                        string type = formCollection["type"];
+                        string location = formCollection["location"];
 
-                    driver.Category = category;
-                    driver.Type = type;
-                    driver.Location = location;
+                        //check string values
+                        Debug.WriteLine(category);
+                        Debug.WriteLine(type);
+                        Debug.WriteLine(location);
 
-                    driver.FailureFault = Request.Form["failureFault"];
-                    driver.Discarded = Request.Form["discarded"] == "on"; // For checkboxes, check if it's "on" to set Discarded to true
-                    driver.Notes = Request.Form["notes"];
+                        driver.Category = category;
+                        driver.Type = type;
+                        driver.Location = location;
 
-                    // Add driver to context and save changes
-                    _context.Add(driver);
-                    await _context.SaveChangesAsync();
+                        driver.FailureFault = formCollection["FailureFault"];
+                        driver.Discarded = formCollection["discarded"] == "on"; // For checkboxes, check if it's "on" to set Discarded to true
+                        driver.Notes = formCollection["notes"];
+
+                        // Add driver to context and save changes
+                        _context.Add(driver);
+                        await _context.SaveChangesAsync();
+                    } else
+                    {
+                        ModelState.AddModelError("", "Failed to add record. Ensure connection to the database and try again.");
+                        return View();
+                    }
                 }
 
                 return RedirectToAction(nameof(ViewRecord));
             }
-            catch
+            catch (Exception ex)
             {
+                Debug.WriteLine("Exception occurred: " + ex.ToString());
                 await Response.WriteAsync("Failed to add record. Ensure connection to the database and try again.");
                 return View();
             }
@@ -422,7 +442,7 @@ namespace Failure_Logging_System.Controllers
 
             //count the # of drivers
             //initialize counters
-            int AT = 0, SPL = 0, W = 0, PP = 0, CUBE = 0, total = driverIterator.Count;
+            int AT = 0, ATairleak = 0, ATlistening = 0, SPL = 0, SPLairleak = 0, SPLlistening = 0, W = 0, Wairleak = 0, PP = 0, PPairleak = 0, CUBE = 0, CUBEairleak = 0, total = driverIterator.Count;
 
             //iterate through records
             for (int i = 0; i < driverIterator.Count; i++)
@@ -431,18 +451,54 @@ namespace Failure_Logging_System.Controllers
                 {
                     case "AT":
                         AT++;
+                        switch (driverIterator[i].Category)
+                        {
+                            case "Air Leak":
+                                ATairleak++;
+                                break;
+                            case "Listening":
+                                ATlistening++;
+                                break;
+                        }
                         break;
                     case "SPL":
                         SPL++;
+                        switch (driverIterator[i].Category)
+                        {
+                            case "Air Leak":
+                                SPLairleak++;
+                                break;
+                            case "Listening":
+                                SPLlistening++;
+                                break;
+                        }
                         break;
                     case "W":
                         W++;
+                        switch (driverIterator[i].Category)
+                        {
+                            case "Air Leak":
+                                Wairleak++;
+                                break;
+                        }
                         break;
                     case "PP":
                         PP++;
+                        switch (driverIterator[i].Category)
+                        {
+                            case "Air Leak":
+                                PPairleak++;
+                                break;
+                        }
                         break;
                     case "CUBE":
                         CUBE++;
+                        switch (driverIterator[i].Category)
+                        {
+                            case "Air Leak":
+                                CUBEairleak++;
+                                break;
+                        }
                         break;
                     default:
                         break;
@@ -465,9 +521,14 @@ namespace Failure_Logging_System.Controllers
             pieData.Add(new PieSeriesData { Name = "PP", Y = Math.Round(PPpercent, 1), Sliced = true, Selected = true, Color = "Green" });
             pieData.Add(new PieSeriesData { Name = "CUBE", Y = Math.Round(CUBEpercent, 1), Sliced = true, Selected = true, Color = "Purple" });
 
+            List<ColumnSeriesData> chartData = new List<ColumnSeriesData>();
+
+            
+
             //assigning ViewData
             ViewData["pieData"] = pieData;
             ViewData["total"] = total;
+            ViewData["chartData"] = chartData;
 
             //assigning SelectListItem to View Bag
             ViewBag.drivers = drivers;
